@@ -59,7 +59,7 @@ module ActionView
     end
     
     class FormBuilder
-      def language_select(method, priority_languages = nil, specific_languages = nil, options = {}, html_options = {})
+      def language_select_tag(method, priority_languages = nil, specific_languages = nil, options = {}, html_options = {})
         @template.language_select(@object_name, method, priority_languages, specific_languages, options.merge(:object => @object), html_options)
       end
     end

@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'language_select_tag'
-  s.version     = '1.0.0'
+  s.version     = '1.0.2'
   s.date        = '2014-07-28'
   s.summary     = ""
   s.description = "Ruby gem to populate language select dropdown lis"
