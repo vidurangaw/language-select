@@ -25,5 +25,9 @@ Supplying priority countries to be placed at the top of the list:
 
     country_select("language", [ "English", "Spaish", "French" ], nil)
 
+Supplying specific countries to be showm at the list instead of all the languages:
 
+    country_select("language", nil, [ "English", "Spaish", "French" ])
+    
+    
 Copyright (c) 2014 Viduranga Wijesooriya, released under the MIT license
