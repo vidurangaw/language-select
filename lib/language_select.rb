@@ -12,7 +12,7 @@ module ActionView
 
       # Return select and option tags for the given object and method, using language_options_for_select to generate the list of option tags.
       def language_select(object, method, priority_languages = nil, specific_languages = nil, options = {}, html_options = {})
-        InstanceTag.new(object, method, self, options.delete(:object)).to_language_select_tag(priority_languages, specific_languages, options, html_options)
+        InstanceTag.new(object, method, self, options.delete(:object)).to_language_select(priority_languages, specific_languages, options, html_options)
       end
 
       # Returns a string of option tags for standered languages in the world. 
@@ -45,7 +45,7 @@ module ActionView
     end
     
     class InstanceTag
-      def to_language_select_tag(priority_languages, specific_languages, options, html_options)
+      def to_language_select(priority_languages, specific_languages, options, html_options)
         html_options = html_options.stringify_keys
         add_default_name_and_id(html_options)
         value = value(object)
@@ -59,7 +59,7 @@ module ActionView
     end
     
     class FormBuilder
-      def language_select_tag(method, priority_languages = nil, specific_languages = nil, options = {}, html_options = {})
+      def language_select(method, priority_languages = nil, specific_languages = nil, options = {}, html_options = {})
         @template.language_select(@object_name, method, priority_languages, specific_languages, options.merge(:object => @object), html_options)
       end
     end
