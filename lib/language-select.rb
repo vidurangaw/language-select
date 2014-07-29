@@ -32,7 +32,7 @@ module ActionView
 
         if specific_languages
           # Adds the languages specified in the tag
-          specific_languages_hash = Hash[ LANGUAGES.select{|k, _| priority_languages.include?(k)} ]  
+          specific_languages_hash = Hash[ LANGUAGES.select{|k, _| specific_languages.include?(k)} ]  
           language_options += options_for_select(specific_languages_hash, specific)        
         else
           # Adds all the languages in the languages.json file
