@@ -27,7 +27,7 @@ Supplying specific countries to be listed instead of all the languages:
 
 Supplying additional languages to be listed, additinally to the default list of languages:
 
-    form.language_select("language", nil, [ "English", "Spanish", "French" ], nil)
+    form.language_select("language", nil, {"Filipino" => "fil", "Mandarin" => "man"}, nil)
     
 Supplying priority languages to be listed at the top of the list:
 
