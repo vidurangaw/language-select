@@ -19,7 +19,7 @@ Or put the following in your Gemfile
 
 Simple use supplying model and attribute as parameters:
 
-    form.language_select("language", nil, nil)
+    form.language_select("language", nil, nil, nil)
 
 Supplying specific countries to be listed instead of all the languages:
 
