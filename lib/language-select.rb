@@ -24,13 +24,7 @@ module ActionView
         languages_list = FormOptionsHelper.language_list
         language_options = ""
 
-        # Adds the priority languages
-        if priority_languages   
-          priority_languages_hash = Hash[ languages_list.select{|k, _| priority_languages.include?(k)} ]       
-          language_options += options_for_select(priority_languages_hash, specific)
-          language_options += "<option value=\"\" disabled=\"disabled\">-------------</option>\n"
-          specific=nil if priority_languages.include?(specific)
-        end
+        
         # Adds the languages specified in the tag
         if specific_languages          
           languages_list = Hash[ languages_list.select{|k, _| specific_languages.include?(k)} ]                    
@@ -38,9 +32,16 @@ module ActionView
         # Adds additional languages
         if additional_languages
           languages_list = languages_list.merge(additional_languages).sort       
-        end    
-        language_options += options_for_select(languages_list, specific)   
+        end 
+        # Adds the priority languages
+        if priority_languages   
+          priority_languages_hash = Hash[ languages_list.select{|k, _| priority_languages.include?(k)} ]       
+          language_options += options_for_select(priority_languages_hash, specific)
+          language_options += "<option value=\"\" disabled=\"disabled\">-------------</option>\n"
+          specific=nil if priority_languages.include?(specific)
+        end
 
+        language_options += options_for_select(languages_list, specific)
         language_options = language_options.html_safe if language_options.respond_to?(:html_safe)
         return language_options
       end
@@ -53,7 +54,7 @@ module ActionView
         value = value(object)
         content_tag("select",
           add_options(
-            language_options_for_select(value, priority_languages, specific_languages, additional_languages),
+            language_options_for_select(value, specific_languages, additional_languages, priority_languages),
             options, value
           ), html_options
         )
