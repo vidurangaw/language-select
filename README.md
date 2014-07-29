@@ -1,29 +1,34 @@
-# Language::Select
+# Language Select
 
-TODO: Write a gem description
+Ruby gem to populate language select dropdown list
+
+Provides a simple helper to get an HTML select list of languages.  The list of countries comes from the ISO ISO 639-1 standard (http://www.w3schools.com/tags/ref_language_codes.asp).  
+
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Install as a gem using
+
+    gem install language-select
+
+Or put the following in your Gemfile
 
     gem 'language-select'
 
-And then execute:
+## Example
 
-    $ bundle
+Simple use supplying model and attribute as parameters:
 
-Or install it yourself as:
+    form.language_select("language", nil, nil)
 
-    $ gem install language-select
+Supplying priority countries to be placed at the top of the list:
 
-## Usage
+    country_select("language", [ "English", "Spaish", "French" ], nil)
 
-TODO: Write usage instructions here
+Supplying specific countries to be showm at the list instead of all the languages:
 
-## Contributing
-
-1. Fork it ( https://github.com/[my-github-username]/language-select/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+    country_select("language", nil, [ "English", "Spaish", "French" ])
+    
+    
+    
+Copyright (c) 2014 Viduranga Wijesooriya, released under the MIT license
