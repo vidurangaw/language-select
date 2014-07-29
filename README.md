@@ -21,14 +21,19 @@ Simple use supplying model and attribute as parameters:
 
     form.language_select("language", nil, nil)
 
-Supplying priority countries to be placed at the top of the list:
+Supplying specific countries to be listed instead of all the languages:
 
-    country_select("language", [ "English", "Spaish", "French" ], nil)
+    country_select("language", [ "English", "Spanish", "French" ], nil, nil)    
 
-Supplying specific countries to be showm at the list instead of all the languages:
+Supplying additional languages to be listed, additinally to the default list of languages:
 
-    country_select("language", nil, [ "English", "Spaish", "French" ])
+    country_select("language", nil, [ "English", "Spanish", "French" ], nil)
     
+Supplying priority languages to be listed at the top of the list:
+
+    country_select("language", nil, nil [ "English", "Spanish", "French" ])
     
+
+        
     
 Copyright (c) 2014 Viduranga Wijesooriya, released under the MIT license
