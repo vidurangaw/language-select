@@ -17,11 +17,11 @@ Or put the following in your Gemfile
 
 ## Example
 
-Simple use supplying model and attribute as parameters:
+Simple use supplying model attribute as parameters:
 
     form.language_select("language", nil, nil, nil)
 
-Supplying specific countries to be listed instead of all the languages:
+Supplying specific languages to be listed instead of all the languages:
 
     form.language_select("language", [ "English", "Spanish", "French" ], nil, nil)    
 
