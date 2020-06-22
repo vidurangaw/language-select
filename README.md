@@ -25,7 +25,7 @@ Supplying specific languages to be listed instead of all the languages:
 
     form.language_select("language", [ "English", "Spanish", "French" ], nil, nil)    
 
-Supplying additional languages to be listed, additinally to the default list of languages:
+Supplying additional languages to be listed, additionally to the default list of languages:
 
     form.language_select("language", nil, {"Filipino" => "fil", "Mandarin" => "man"}, nil)
     
